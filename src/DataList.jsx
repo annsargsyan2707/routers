@@ -12,7 +12,7 @@ import SendIcon from "@mui/icons-material/Send";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import StarBorder from "@mui/icons-material/StarBorder";
-import { IconButton, ListItem } from "@mui/material";
+import { Box, IconButton, ListItem, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 //import { BrowserRouter, Route } from "react-router-dom";
 
@@ -42,19 +42,25 @@ const DataList = () => {
   };
 
   return (
-    <div>
-      <Link to="/">Back</Link>
+    <Box
+      sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
+    >
       <List
         subheader={
           <ListSubheader component="div" id="nested-list-subheader">
-            Breeds
+            <Typography
+              variant="h4"
+              sx={{ color: "#00ADF1", fontWeight: "bold" }}
+            >
+              Breeds
+            </Typography>
           </ListSubheader>
         }
       >
         {breeds.map((item) => (
           <React.Fragment key={item.breed}>
             <ListItem>
-              <ListItemText>
+              <ListItemText sx={{ color: "#00ADF1" }}>
                 {item.breed}
                 {!!item.subBreeds.length && (
                   <>
@@ -85,7 +91,7 @@ const DataList = () => {
           </React.Fragment>
         ))}
       </List>
-    </div>
+    </Box>
   );
 };
 
