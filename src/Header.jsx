@@ -10,7 +10,7 @@ const Header = () => {
       <Typography
         variant="h3"
         sx={{
-          color: "#94C92C",
+          color: "#697552",
           fontWeight: "bold",
           alignItems: "center",
           display: "flex",
@@ -35,7 +35,7 @@ const Header = () => {
           component={RouterLink}
           to="/"
           underline="hover"
-          sx={{ color: "#00ADF1" }}
+          sx={{ color: "#5E5741" }}
         >
           Home
         </MuiLink>
@@ -43,7 +43,7 @@ const Header = () => {
           component={RouterLink}
           to={BREED_LIST_ROUTE}
           underline="hover"
-          sx={{ color: "#00ADF1" }}
+          sx={{ color: "#5E5741" }}
         >
           Breed list
         </MuiLink>
@@ -51,7 +51,7 @@ const Header = () => {
           component={RouterLink}
           to={RANDOM_IMG}
           underline="hover"
-          sx={{ color: "#00ADF1" }}
+          sx={{ color: "#5E5741" }}
         >
           Random image
         </MuiLink>

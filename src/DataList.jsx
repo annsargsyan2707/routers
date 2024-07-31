@@ -50,7 +50,7 @@ const DataList = () => {
           <ListSubheader component="div" id="nested-list-subheader">
             <Typography
               variant="h4"
-              sx={{ color: "#00ADF1", fontWeight: "bold" }}
+              sx={{ color: "#523F3F", fontWeight: "bold" }}
             >
               Breeds
             </Typography>
@@ -60,8 +60,14 @@ const DataList = () => {
         {breeds.map((item) => (
           <React.Fragment key={item.breed}>
             <ListItem>
-              <ListItemText sx={{ color: "#00ADF1" }}>
-                {item.breed}
+              <ListItemText sx={{ color: "#654831" }}>
+                <Link
+                  key={item.breed}
+                  to={`/dataList/breeds/${item.breed}`}
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  {item.breed}
+                </Link>
                 {!!item.subBreeds.length && (
                   <>
                     {open[item.breed] ? (
@@ -82,7 +88,14 @@ const DataList = () => {
                 <List component="div" disablePadding>
                   {item.subBreeds.map((subBreed) => (
                     <ListItem sx={{ pl: 4 }}>
-                      <ListItemText>{subBreed}</ListItemText>
+                      <ListItemText>
+                        <Link
+                          to={`/dataList/breeds/${item.breed}/${subBreed}`}
+                          style={{ textDecoration: "none", color: "inherit" }}
+                        >
+                          {subBreed}
+                        </Link>
+                      </ListItemText>
                     </ListItem>
                   ))}
                 </List>

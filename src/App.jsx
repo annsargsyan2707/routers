@@ -4,7 +4,11 @@ import DataList from "./DataList.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./Header.jsx";
 import Random from "./Random.jsx";
-import { BREED_LIST_ROUTE, RANDOM_IMG } from "./constants/routes.js";
+import {
+  BREED_LIST_ROUTE,
+  RANDOM_IMG,
+  RANDOM_SUBBREED_IMG,
+} from "./constants/routes.js";
 import Home from "./Home.jsx";
 
 const App = () => {
@@ -16,6 +20,7 @@ const App = () => {
             <Route index element={<Home />} />
             <Route path={BREED_LIST_ROUTE} element={<DataList />} />
             <Route path={RANDOM_IMG} element={<Random />} />
+            <Route path={RANDOM_SUBBREED_IMG} element={<Random />} />
           </Route>
         </Routes>
       </BrowserRouter>
